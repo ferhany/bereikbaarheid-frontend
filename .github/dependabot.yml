@@ -10,7 +10,6 @@ updates:
       maintenance:
         applies-to: "version-updates"
         update-types:
-          - "major"
           - "minor"
           - "patch"
     labels:
@@ -21,13 +20,6 @@ updates:
     allow:
       - dependency-type: "all"
     open-pull-requests-limit: 1
-    ignore:
-      - dependency-name: "react"
-        versions:
-          - ">=18"
-      - dependency-name: "react-dom"
-        versions:
-          - ">=18"
 
   - package-ecosystem: "github-actions"
     directory: "/"
