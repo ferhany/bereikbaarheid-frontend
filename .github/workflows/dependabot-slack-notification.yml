@@ -19,13 +19,13 @@ jobs:
     name: Debug Dependabot Slack conditions
     steps:
       - name: Debug actor
-        run: echo "Actor is: ${{ github.actor }}"
+        run: echo "Actor is ${{ github.actor }}"
 
       - name: Debug PR author
-        run: echo "PR author is: ${{ github.event.pull_request.user.login }}"
+        run: echo "PR author is ${{ github.event.pull_request.user.login }}"
 
       - name: Debug labels
-        run: echo "Labels: ${{ toJson(github.event.pull_request.labels) }}"
+        run: echo "Labels ${{ toJson(github.event.pull_request.labels) }}"
 
       - name: Restore cached Slack message timestamp
         id: slack-message-timestamp-cache
