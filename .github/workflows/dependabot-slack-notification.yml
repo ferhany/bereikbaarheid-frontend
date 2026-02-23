@@ -16,8 +16,13 @@ defaults:
 jobs:
   pr-slack-notification:
     runs-on: ubuntu-latest
-    name: Debug Dependabot Slack conditions
+    name: Sends a message to Slack when a PR is opened
+    if: |
+      github.actor == 'dependabot[bot]' &&
+      contains(github.event.pull_request.labels.*.name, 'dependencies') &&
+      !contains(github.event.pull_request.labels.*.name, 'github-actions')
     steps:
+
       - name: Debug actor
         run: echo "Actor is ${{ github.actor }}"
 
