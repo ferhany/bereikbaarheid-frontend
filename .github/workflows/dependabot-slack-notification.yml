@@ -20,6 +20,7 @@ jobs:
     outputs:
       exit_code: ${{ steps.check.outputs.exit_code}}
     steps:
+
       - name: Debug actor
         run: echo "Actor is ${{ github.actor }}"
 
